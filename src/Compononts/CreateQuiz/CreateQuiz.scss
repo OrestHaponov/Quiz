@@ -1,0 +1,20 @@
+.createQuestion{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    &__question{
+        input{
+            width: 250px;
+            height: 20px;
+        }
+    }
+    &__answers{
+        input{
+            width: 250px;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+    }
+    &__select{
+    }
+}
