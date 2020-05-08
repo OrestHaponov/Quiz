@@ -1,0 +1,43 @@
+.quizList{
+    list-style-type: none;
+    color: #fff;
+    flex-basis: 33%;
+    h3{
+        font-family: 'FiraSans-Regular';
+        font-size: 20px;
+        font-weight: normal;
+    }
+    &__names{
+        position: relative;
+        padding: 0;
+        li{
+            display: flex;
+            align-items: center;
+            width: 150px;
+            height: 30px;
+            color: #000;
+            font-family: 'Lato-Light';
+            font-size: 18px;
+            background: #fff;
+            padding-left: 10px;
+            margin: 5px 0 5px 0;
+        }
+    }
+}
+
+
+@media screen and (max-width:760px){
+    .quizList{
+        h3{
+            font-size: 15px;
+            width: 130px;
+        }
+        &__names{
+            li{
+                width: 105px;
+                height: 25px;
+                font-size: 16px;
+            }
+        }
+    }
+}

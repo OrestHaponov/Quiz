@@ -1,0 +1,89 @@
+.quiz{
+    color: #fff;
+    .wrapper{
+        width: 500px;
+        margin: 0 auto;
+    }
+    &__activeQuestion{
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 7px;
+        border: 2px solid #fff;
+        &-question{
+            font-family: 'Montserrat Regular';
+            span{
+                margin-right: 5px;
+                font-size: 20px;
+            }
+            h3{
+                font-size: 25px;
+                margin: 0;
+            }
+        }
+        &-answerList{
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+            font-size: 20px;
+            font-family: 'FiraSans-Regular';
+            margin-bottom: 0;
+            li{
+                flex-basis: 48%;
+                margin: 20px 5px 0px 0;
+            }
+        }
+    }
+    &__result{
+        text-align: center;
+        ul{
+            width: 500px;
+            list-style-type: none;
+            font-family: 'Montserrat Regular';
+            padding: 0;
+            li{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        &-wrong{
+            color: rgb(148, 8, 8);
+            font-size: 20px;
+        }
+        &-right{
+            font-size: 20px;
+            color: rgb(12, 158, 12);
+        }
+        button{
+            width: 150px;
+            height: 30px;
+            font-family: 'Roboto Regular';
+            color: #fff;
+            font-size: 15px;
+            background: transparent;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            outline: none;
+            &:hover{
+                height: 35px;
+                width: 160px;
+                font-size: 16px;
+                transition-duration: 0.5s;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:760px){
+    .quiz{
+        .wrapper{
+            width: 300px;
+        }
+        &__result{
+            ul{
+                width: 300px;
+            }
+        }
+    }
+}

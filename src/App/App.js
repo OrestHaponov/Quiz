@@ -1,11 +1,9 @@
 import React from "react";
 import "./app.scss";
 import "../fonts/fonts.scss";
-import Quiz from "../Compononts/Quiz/Quiz";
 import Routes from "../Routes";
-import QuizList from "../Compononts/QuizList/QuizList";
-import CreateQuiz from "../Compononts/CreateQuiz/CreateQuiz";
-
+import Header from "../Compononts/Header/Header";
+import HomePage from "../Compononts/HomePage/HomePage";
 
 class App extends React.Component {
     constructor(props){
@@ -14,9 +12,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                {/* <Quiz /> */}    
-                {/* <QuizList  /> */}
-                <CreateQuiz />
+                <Header /> 
                 <Routes />
             </div>
         );

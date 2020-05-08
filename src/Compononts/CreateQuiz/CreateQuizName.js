@@ -7,11 +7,11 @@ class CreateQuizName extends React.Component {
 
     render() {
         return (
-            <div className="createName">
-                <h3>Please create name</h3>
+            <form className="createQuiz__name" onSubmit={()=>this.props.addQuizName(this.props.valueQuizName)}>
+                <h3>Choose name for your quiz</h3>
                 <input type="text" value={this.props.valueQuizName} onChange={this.props.handleChangeQuizName}/>
-                <button onClick={()=>this.props.addQuizName(this.props.valueQuizName)}>Push</button>
-            </div>
+                <input type="Submit" placeholder="Push" defaultValue="Push"/>
+            </form>
         );
     }
 }

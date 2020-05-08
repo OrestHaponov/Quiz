@@ -9,9 +9,8 @@ class ActiveQuestion extends React.Component {
     render() {
         return (
             <div className="quiz__activeQuestion">
-                <div className="test">
-                    <span>{this.props.activeQuestion}</span>
-                    <h3>{this.props.question}</h3>
+                <div className="quiz__activeQuestion-question">
+                    <h3><span>{this.props.activeQuestion}.</span>{this.props.question}</h3>
                 </div>
                 <AnswersList 
                     answersList={this.props.answersList}
@@ -21,7 +20,7 @@ class ActiveQuestion extends React.Component {
                     quizLength={this.props.quiz.length}
                     activeQuestion={this.props.activeQuestion}
                 />
-                <div className="question-count">
+                <div className="quiz__activeQuestion-count">
                     <h3>{this.props.activeQuestion}/{this.props.quiz.length}</h3>
                 </div>
             </div>

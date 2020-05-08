@@ -7,9 +7,10 @@ class CreateQuestion extends React.Component {
 
     render() {
         return (
-            <div className="createQuestion__question">
+            <div className="createQuiz__questions-question">
                 <h3>Question</h3>
                 <input type="text" value={this.props.valueQuestion} onChange={this.props.handleChangeQuestion}/>
+                <hr/>
             </div>
         );
     }

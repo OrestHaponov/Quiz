@@ -7,16 +7,20 @@ class QuizResults extends React.Component {
 
     render() {
         return (
-            <div className="result">
-                <button onClick={this.props.returnToQuiz}>Return</button>
+            <div className="quiz__result">
                 {this.props.result.map((value,index)=>{
                     return(
-                        <div className="result" key={index}>
-                            <h1>{value.question}</h1>
-                            <h2>{value.answer}</h2>
-                        </div>
+                        <ul key={index}>
+                            <li>
+                                <h3>{value.question}</h3>
+                                <span className={value.answer == "Wrong" ? "quiz__result-wrong" : "quiz__result-right"}>
+                                    {value.answer}
+                                </span>
+                            </li>
+                        </ul>
                     )
                 })}
+                <button onClick={this.props.tryAgain}>Try again</button>
             </div>
         );
     }

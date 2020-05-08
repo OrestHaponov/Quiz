@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
-import {chooseAnswer,returnToQuiz} from "../../Store/Action/Quiz";
+import "./Quiz.scss";
+import {chooseAnswer,tryAgain} from "../../Store/Action/Quiz";
 import ActiveQuestion from "./ActiveQuestion";
 import QuizResults from "./QuizResults";
 
@@ -10,23 +11,23 @@ class Quiz extends React.Component {
     }
 
     render() {
-        let quiz = this.props.quizes.filter(findQuiz=>findQuiz.name == this.props.quizName);
         return (
             <div className="quiz">
                 <div className="wrapper">
+                <h1>{this.props.quizName}</h1>
                 {this.props.endQuiz === false ?
                     <ActiveQuestion 
-                        quiz={quiz}
-                        question={quiz[this.props.activeQuestion].question}
-                        answersList={quiz[this.props.activeQuestion].answers}
-                        rightAnswer={quiz[this.props.activeQuestion].rightAnswer}
+                        quiz={this.props.quiz}
+                        question={this.props.quiz[this.props.activeQuestion].question}
+                        answersList={this.props.quiz[this.props.activeQuestion].answers}
+                        rightAnswer={this.props.quiz[this.props.activeQuestion].rightAnswer}
                         activeQuestion={this.props.activeQuestion + 1}
                         chooseAnswer={this.props.chooseAnswer}
                     />
                     :
                     <QuizResults 
                         result={this.props.result}
-                        returnToQuiz={this.props.returnToQuiz}
+                        tryAgain={this.props.tryAgain}
                     />
                 }
                 </div>
@@ -37,7 +38,6 @@ class Quiz extends React.Component {
 
 function mapStateToProps(state){
     return{
-        // quiz: state.Quiz.quiz,
         quizes: state.Quiz.quizes,
         activeQuestion: state.Quiz.activeQuestion,
         result: state.Quiz.result,
@@ -48,7 +48,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
     return{
         chooseAnswer: (answerId,rightAnswer,question,quizLength,activeQuestion)=>dispatch(chooseAnswer(answerId,rightAnswer,question,quizLength,activeQuestion)),
-        returnToQuiz: ()=>dispatch(returnToQuiz()),
+        tryAgain: ()=>dispatch(tryAgain()),
     }
 }
 

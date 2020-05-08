@@ -8,7 +8,7 @@ class AnswersList extends React.Component {
 
     render() {
         return (
-            <ul>
+            <ul className="quiz__activeQuestion-answerList">
                 {this.props.answersList.map((value,index)=>{
                     return(
                         <Answer 

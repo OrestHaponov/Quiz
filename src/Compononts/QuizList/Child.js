@@ -1,17 +1,16 @@
-import React from "react";
-import {
-  useParams
-} from "react-router-dom";
-import QuizList from "./QuizList";
-import Quiz from "../Quiz/Quiz";
+  import React from "react";
+  import {useParams, useLocation} from "react-router-dom";
+  import Quiz from "../Quiz/Quiz";
 
-export default function Child() {
-    let {name} = useParams();
-  return (
-    <div className="user">
-        <h1>{name}</h1>
-        <Quiz quizName={name}/>
-    </div>
-  );
-}
+  export default function Child() {
+      let {name} = useParams();
+      const { state } = useLocation();
+      let quizQuestions = state.quizQuestions;
+    return (
+          <Quiz 
+            quiz={quizQuestions}
+            quizName={name}
+          />
+    );
+  }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 class AddQuiz extends React.Component {
     constructor(props){
@@ -7,7 +8,14 @@ class AddQuiz extends React.Component {
 
     render() {
         return (
-            <input type="button" value="Add Quiz" onClick={()=>this.props.addQuiz(this.props.quiz)}/>
+            <Link to="/createdQuiz">
+                <input type="button" value="Add Quiz" 
+                    onClick={()=>this.props.addQuiz(
+                        this.props.quiz,
+                        this.props.quizName
+                    )}
+                />
+            </Link>
         );
     }
 }
